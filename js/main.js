@@ -1,5 +1,3 @@
-console.log('tick tack toe motherfuckers!')
-
 
 // const win = [
 //   ["abc"],

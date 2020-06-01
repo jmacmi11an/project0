@@ -1,16 +1,15 @@
-console.log("I'm here too bitches!")
 
 const win = [
-  ["abc"],
-  ["def"],
-  ["ghi"],
-  ["adg"],
-  ["beh"],
-  ["cfi"],
-  ["aei"],
-  ["ceg"],
+  "abc",
+  "def",
+  "ghi",
+  "adg",
+  "beh",
+  "cfi",
+  "aei",
+  "ceg"
 ];
-const boxes = {
+let boxes = {
   a: 0,
   b: 0,
   c: 0,
@@ -29,11 +28,12 @@ let secondPlayer = []; //second player guesses
 let playerTurn = true;    //this just makes sure each new choice is a new player
 
 
+//tested and works
 const isEmpty = function(string){
-  if (boxes.string !== 0){
+  if (boxes[string] !== 0){
     return false;
   } else {
-    boxes.string = 1;
+    boxes[string] = 1;
     return true;
   }
 }
@@ -45,8 +45,6 @@ const isEmpty = function(string){
 
 
 
-
-
 // const sortedChoices = function(array){ //this returns an array of alphabetized strings
 //   return array.sort();
 // }
@@ -54,12 +52,9 @@ const isEmpty = function(string){
 
 
 //when one of the 9 buttons is pressed
-
-
-
-
 $('button').click(function(){
   let box = $(this).attr("id");               // box is now a string of a character a-i
+
   if (isEmpty(box)){                          // check if the box has been ticked yet.
     if (playerTurn){                          // check to see who's turn
       firstPlayer.push(box);                  // add the square to the player array
@@ -70,28 +65,54 @@ $('button').click(function(){
       determineWin(secondPlayer);
       playerTurn = true;
     }
-    console.log(`first player choices ${firstPlayer}, second player choices ${secondPlayer}.`)
-  };
+  } else {
+    if (isEmpty(box) === false){
+      console.log("you already selected that box");
+    }
+  }
 
-
-    console.log("You've already checked that box")
 })
 
 
 
+// Need to write a win function that resets the game and possibly does other shit.
+const endGame = function(){
+  firstPlayer = [];
+  secondPlayer = [];
+  playerTurn = true;
+  boxes = {
+    a: 0,
+    b: 0,
+    c: 0,
+    d: 0,
+    e: 0,
+    f: 0,
+    g: 0,
+    h: 0,
+    i: 0
+  };
+}
+
+
+
+
+
+//Still need to solve for if the game goes to 4 or 5 choices.
 const determineWin = function(array){
-  array.sort();                            //alphabetize the array
-  array.toString("");                      //turn the array into a string
-  if (array.length === 3){                    //make sure array is long enough
+  let sorted = array.sort();                            //alphabetize the array
+  let playerString = sorted.join("")                   //turn the array into a string
+  if (playerString.length === 3){                    //make sure array is long enough
     for (let i = 0; i < win.length; i++) {          //iterate across the "win" array
-      if (array !== win[i]){
-        console.log("keep playing");
-      } else {
+      if (playerString === win[i]){
+        endGame();
         console.log(`you win! ${firstPlayer}: ${secondPlayer}`);
       }
     }
   }
 }
+
+
+
 
 
 
