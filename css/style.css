@@ -14,8 +14,24 @@ div.gameboard {
   height: 600px;
 }
 
-div.gameboard button{
-  height: 26%;
-  width: 26%;
 
+img {
+  display: inline-block;
+  height: 25%;
+  width: 25%;
+  border: 1px red solid;
+}
+
+img:hover {
+  background-color: gray;
+}
+
+div img.rick {
+  background-image: url(rick-sanchez.jpg);
+  background-size: cover;
+}
+
+div img.morty {
+  background-image: url(morty-smith.jpg);
+  background-size: cover;
 }
