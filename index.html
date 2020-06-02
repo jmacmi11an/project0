@@ -4,15 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
+  <title>RickTacToe</title>
 </head>
 <body>
   <header>
-    <h1>Welcome to TicTacToe</h1>
+    <h2>Welcome to</h2>
+    <h1><span id="tic">Rick</span><span id="tac">Tac</span><span id="morty">Toe</span></h1>
     <p>Take turns selecting squares. The first player to get three in a row wins!</p>
   </header>
     <div class="container">
+
+      <button type="button" name="button">Let's Get Schwifty</button>
+      <div class="players">
+        <p id="morty" class="first-player">Morty, your turn!</p>
+        <p id="rick" class="second-player">Go ahead, Rick</p>
+      </div>
 
       <div class="gameboard">
         <img id="a">
@@ -24,12 +31,6 @@
         <img id="g">
         <img id="h">
         <img id="i">
-      </div>
-
-
-      <div>
-        <p class="first-player">Player 1, your turn!</p>
-        <p class="second-player">Player 2, your turn!</p>
       </div>
 
     </div>

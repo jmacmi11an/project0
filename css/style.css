@@ -1,6 +1,17 @@
+/* @import url('');
+ */
+
+@font-face{
+  font-family: "GetSchwifty";
+  src: url('get_schwifty.ttf')
+}
+
 body {
-  background-color: pink;
+  background-color: #262d3a;
   text-align:  center;
+  font-family: "GetSchwifty";
+  color: white;
+
 }
 
 .container {
@@ -8,18 +19,93 @@ body {
   display: inline;
 }
 
+h2 {
+  color: #15b0c9;
+  font-size: 40px;
+  position: relative;
+  -webkit-text-stroke-width: .7px;
+  -webkit-text-stroke-color: #cbe261;
+}
+
+h1 {
+  color: #15b0c9;
+  font-size: 84px;
+  position: relative;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #cbe261;
+}
+
+span#tic {
+  animation-name: title;
+  animation-duration: 1.2s;
+  animation-delay: 1s;
+}
+
+span#tac {
+  animation-name: title;
+  animation-duration: 1.2s;
+  animation-delay: 2.1s;
+}
+
+span#morty {
+  animation-name: title;
+  animation-duration: 2s;
+  animation-delay: 3.2s;
+}
+
+@keyframes title {
+  50% {font-size: 130px;}
+}
+
+p {
+  letter-spacing: 2px;
+  font-size: 19px;
+  color: #cbe261;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #15b0c9;
+}
+
+button {
+  background-color: black;
+  color: #15b0c9;
+  font-family: GetSchwifty;
+  font-size: 26px;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 10px;
+}
+
+div p {
+  visibility: hidden;
+  margin-top: -2em;
+  margin-bottom: 4em;
+}
+
+div p.first-player {
+  /* visibility: visible; */
+}
+
+div p.second-player {
+  visibility: hidden;
+}
+
+
 div.gameboard {
   display: inline-block;
   width: 600px;
   height: 600px;
+  margin: 0em;
 }
 
 
 img {
+  visibility: hidden;
   display: inline-block;
   height: 25%;
   width: 25%;
-  border: 1px red solid;
+  border: 2px white solid;
+  margin: -3px;
+
 }
 
 img:hover {
