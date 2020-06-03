@@ -66,6 +66,7 @@ p {
 }
 
 button {
+  /* position: absolute; */
   background-color: black;
   color: #15b0c9;
   font-family: GetSchwifty;
@@ -76,9 +77,10 @@ button {
 }
 
 div p {
+  /* positon: sticky; */
   visibility: hidden;
-  margin-top: -2em;
-  margin-bottom: 4em;
+  margin-top: -4em;
+  margin-bottom: 3em;
 }
 
 div p.first-player {
@@ -120,4 +122,30 @@ div img.rick {
 div img.morty {
   background-image: url(morty-smith.jpg);
   background-size: cover;
+}
+
+
+h1.results {
+  width: 100%;
+  top: 6em;
+  visibility: hidden;
+  position: absolute;
+  text-align: center;
+}
+
+
+
+
+aside {
+  top: 90%;
+  font-size: 26px;
+  position: absolute;
+}
+
+aside.first-player {
+  left: 10%;
+}
+
+aside.second-player {
+  left: 84%;
 }

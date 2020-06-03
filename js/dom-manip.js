@@ -1,54 +1,40 @@
 $(document).ready(function(){
 
 
-// $('.second-player').hide();
-
-// the game starts:
-// button visible
-// paragraphs invisible
-// #morty class first player
-// rick class second players
-// images invisible
 
 $('button').on('click', function(){
+  playerTurn = true;
   $(this).css('visibility', 'hidden');
   $('p').css('visibility', 'visible');
   $('p#morty').css('visibility', 'visible').show();
   $('p.second-player').hide();
   $('img').css('visibility', 'visible');
+  $('h1.results').css('visibility', 'hidden')
+  isReset = false;
 })
 
 
-
-//this goes in the below
-// $('.first-player, .second-player').toggle(200);
 
 
   $('img').click(function(){
     let box = $(this).attr("id");                     // box is now a string of a character a-i
     if (isEmpty(box)){                                 // check if the box has been ticked yet.
-      $('.first-player, .second-player').toggle(200);         //NEW TEST
+      $('p.first-player, p.second-player').toggle();      // this changes the player paragraph class.
       if (playerTurn){                                  // See if it's Morty's turn
-        $(this).addClass('morty');
         playerTurn = false;                             // change who's turn it is
+        $(this).addClass('morty');
         determineWin(player1Win, box);                  // run the win check function
       } else {
+        playerTurn = true;
         $(this).addClass('rick');
         determineWin(player2Win, box);
-        playerTurn = true;
       }
     } else {
       if (isEmpty(box) === false){
-        console.log("you already selected that box");
+      console.log("you already selected that box");
       }
     }
-    if (boxes.count === 9){
-      alert("it's a draw");
-      reset();
-    }
   });
-
-
 
 
 
