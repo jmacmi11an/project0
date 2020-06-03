@@ -73,13 +73,14 @@ const determineWin = function(array, box){
           if (winArray.length === 0){               // if the winpath is empty that triggers a win.
             reset();
             winResult();
-          } else if (boxes.count === 9){
-            reset(); //here is the problem
-            $('h1.results').text('Ugh, you both lose').css('visibility', 'visible')
-            $('audio.draw')[0].play();              //here's where to add the draw graphic
           }
         }
       }
+    }
+    if (9 === boxes.count && isReset === false){
+      reset(); //here is the problem
+      $('h1.results').text('Ugh, you both lose').css('visibility', 'visible')
+      $('audio.draw')[0].play();              //here's where to add the draw graphic
     }
     makeSomeNoise();
 };
@@ -98,12 +99,11 @@ const makeSomeNoise = function(){
 const winResult = function(){
   if (!playerTurn){
     $('h1.results').text('Morty Wins').css('visibility', 'visible')
-    $('audio.morty-win')[0].play();               //here's where to add the win graphic
+    $('audio.morty-win')[0].play();
   } else {
     $('h1.results').text('Rick Wins').css('visibility', 'visible')
-    $('audio.rick-win')[0].play();               //here's where to add the win graphic
+    $('audio.rick-win')[0].play();
   }
-  // $('audio.win')[0].play();               //here's where to add the win graphic
 };
 
 
