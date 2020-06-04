@@ -28,6 +28,7 @@ let player2Win = resetArrays();
 let playerTurn = true;            //this just makes sure each new choice is a new player.
 let isReset = true;
 
+
 //tested and works - this makes sure the box is empty before it's altered.
 const isEmpty = function(string){
   if (boxes[string] !== 0){
@@ -56,11 +57,10 @@ const reset = function(){
     count: 0
   };
   $('button').css('visibility', 'visible');
-  $('img').removeClass('morty').removeClass('rick').css('visibility', 'hidden');
-  // $('div p').css('visibility', 'hidden');
-  $('p#morty').removeClass('first-player').removeClass('second-player').addClass('first-player').hide(); //if this bugs, add a removeClass
-  $('p#rick').removeClass('first-player').removeClass('second-player').addClass('second-player').hide();
+  $('p#first').removeClass('first-player').removeClass('second-player').addClass('first-player').hide();
+  $('p#second').removeClass('first-player').removeClass('second-player').addClass('second-player').hide();
   isReset = true;
+  // $('aside').css('visibility', 'visible')
 };
 
 // this is a function that determines if a player has won
@@ -78,32 +78,41 @@ const determineWin = function(array, box){
       }
     }
     if (9 === boxes.count && isReset === false){
-      reset(); //here is the problem
+      reset();
       $('h1.results').text('Ugh, you both lose').css('visibility', 'visible')
-      $('audio.draw')[0].play();              //here's where to add the draw graphic
+      $('audio.draw')[0].play();
     }
     makeSomeNoise();
 };
 
 
+
 const makeSomeNoise = function(){
   if (isReset === false){
     if (!playerTurn){
-      $('audio.first-player')[Math.floor(Math.random() * 4)].play();
+      $(`audio.${player1.name}`)[Math.floor(Math.random() * 4)].play();
     } else {
-      $('audio.second-player')[Math.floor(Math.random() * 4)].play();
+      $(`audio.${player2.name}`)[Math.floor(Math.random() * 4)].play();
     }
   }
 };
 
 const winResult = function(){
   if (!playerTurn){
-    $('h1.results').text('Morty Wins').css('visibility', 'visible')
-    $('audio.morty-win')[0].play();
+    $('h1.results').text(`${player1.winText}`).css('visibility', 'visible')
+    player1.scoreboard += 1;
+    $(`audio.${player1.name}-win`)[0].play();
   } else {
-    $('h1.results').text('Rick Wins').css('visibility', 'visible')
-    $('audio.rick-win')[0].play();
+    $('h1.results').text(`${player2.winText}`).css('visibility', 'visible')
+    player2.scoreboard += 1;
+    $(`audio.${player2.name}-win`)[0].play();
   }
+  $('aside').css('visibility', 'visible');
+  // $('aside p').css('visibility', 'visible');
+  $('aside.first-player h3').text(`${player1.name} wins`)
+  $('aside p.first').text(`${player1.scoreboard}`).css('visibility', 'visible')
+  $('aside.second-player h3').text(`${player2.name} wins`).css('visibility', 'visible')
+  $('aside p.second').text(`${player2.scoreboard}`)
 };
 
 

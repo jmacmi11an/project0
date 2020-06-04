@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
   <title>RickTacToe</title>
+  <script src="js/player-object.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/main.js"></script>
   <script src="js/dom-manip.js"></script>
@@ -19,13 +20,23 @@
     </div>
     <!-- <h1><span id="tic">Rick</span><span id="tac">Tac</span><span id="morty">Toe</span></h1> -->
     <p>Take turns selecting squares. The first player to get three in a row wins!</p>
+    <p id="characters">Choose your player </p>
   </header>
     <div class="container">
 
-      <button type="button" name="button">Let's Get Schwifty</button>
+      <div class="characters">
+        <button id="rick" class="charcters" type="button" name="button">Rick</button>
+        <button id="morty" class="charcters" type="button" name="button">Morty</button>
+        <button id="meeseeks" class="charcters" type="button" name="button">Mr. Meeseeks</button>
+        <button id="jerry" class="charcters" type="button" name="button">Jerry</button>
+        <button id="summer" class="charcters" type="button" name="button">Summer</button>
+      </div>
+
+      <button id="start" type="button" name="button">Let's Get Schwifty</button>
+
       <div class="players">
-        <p id="morty" class="first-player">Morty, your turn!</p>
-        <p id="rick" class="second-player">Go ahead, Rick</p>
+        <p id="first" class="first-player">M</p>
+        <p id="second" class="second-player">R</p>
       </div>
 
       <div class="gameboard">
@@ -39,31 +50,34 @@
         <img id="h">
         <img id="i">
         <div class="scoreboard">
-          <!-- <aside class="first-player">Games Won
-            <p class="first-player"></p>
+          <aside class="first-player">
+            <h3></h3>
+            <p class="first"></p>
           </aside>
-          <aside class="second-player">Games Won
-            <p class="second-player"></p>
-          </aside> -->
+          <aside class="second-player">
+            <h3></h3>
+            <p class="second"></p>
+          </aside>
+
         </div>
       </div>
 
 
       <div class="audio">
         <!-- <audio class="win" autoplay src="wubbalubbadubdub.mp3" type="audio/mpeg"></audio> -->
-        <audio class="first-player" autoplay src="oh-geez-1.mp3"></audio>
-        <audio class="first-player" autoplay src="oh-snap.mp3"></audio>
-        <audio class="first-player" autoplay src="oh-geez-3.mp3"></audio>
-        <audio class="first-player" autoplay src="oh-geez-5.mp3"></audio>
+        <audio class="morty" autoplay src="audio-files/oh-geez-1.mp3"></audio>
+        <audio class="morty" autoplay src="audio-files/oh-snap.mp3"></audio>
+        <audio class="morty" autoplay src="audio-files/oh-geez-3.mp3"></audio>
+        <audio class="morty" autoplay src="audio-files/oh-geez-5.mp3"></audio>
         <!-- you can make multiple first-player class audio and then math.random for the index -->
-        <audio class="second-player" src="hit-the-sack-jack.mp3"></audio>
-        <audio class="second-player" src="burger-time.mp3"></audio>
-        <audio class="second-player" src="rubber-baby.mp3"></audio>
-        <audio class="second-player" src="somersault-jump.mp3"></audio>
+        <audio class="rick" src="audio-files/hit-the-sack-jack.mp3"></audio>
+        <audio class="rick" src="audio-files/burger-time.mp3"></audio>
+        <audio class="rick" src="audio-files/rubber-baby.mp3"></audio>
+        <audio class="rick" src="audio-files/somersault-jump.mp3"></audio>
 
-        <audio class="rick-win" src="rick-win.mp3"></audio>
-        <audio class="morty-win" src="morty-win.mp3"></audio>
-        <audio class="draw" src="draw.mp3"></audio>
+        <audio class="rick-win" src="audio-files/rick-win.mp3"></audio>
+        <audio class="morty-win" src="audio-files/morty-win.mp3"></audio>
+        <audio class="draw" src="audio-files/draw.mp3"></audio>
       </div>
 
 

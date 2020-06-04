@@ -63,24 +63,36 @@ p {
   color: #cbe261;
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: #15b0c9;
+  height: 55px;
 }
 
 button {
   /* position: absolute; */
+  delay: 1.5s;
   background-color: black;
   color: #15b0c9;
   font-family: GetSchwifty;
   font-size: 26px;
   border-radius: 1em;
-  margin: 1em;
+  margin: 0em;
   padding: 10px;
+}
+
+button#start {
+  visibility: hidden;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 div p {
   /* positon: sticky; */
   visibility: hidden;
-  margin-top: -4em;
+  margin-top: -6em;
   margin-bottom: 3em;
+}
+
+div.players {
+  margin: 1em, auto;
 }
 
 div p.first-player {
@@ -124,6 +136,21 @@ div img.morty {
   background-size: cover;
 }
 
+div img.meeseeks {
+  background-image: url(mr-meeseeks.jpg);
+  background-size: cover;
+}
+
+div img.jerry {
+  background-image: url(jerry-smith.jpg);
+  background-size: cover;
+}
+
+div img.summer {
+  background-image: url(summer-smith.jpg);
+  background-size: cover;
+}
+
 
 h1.results {
   width: 100%;
@@ -131,21 +158,29 @@ h1.results {
   visibility: hidden;
   position: absolute;
   text-align: center;
+  text-shadow: -5px 3px 0px black;
 }
-
 
 
 
 aside {
-  top: 90%;
+  top: 400px;
   font-size: 26px;
   position: absolute;
+  visibility: hidden;
+  text-decoration: underline;
 }
 
 aside.first-player {
-  left: 10%;
+  left: 15%;
 }
 
 aside.second-player {
-  left: 84%;
+  left: 75%;
+}
+
+div aside p {
+  display: inline-block;
+  visibility: visible;
+  color: white;
 }
