@@ -98,6 +98,7 @@ const makeSomeNoise = function(){
 };
 
 const winResult = function(){
+
   if (!playerTurn){
     $('h1.results').text(`${player1.winText}`).css('visibility', 'visible')
     player1.scoreboard += 1;
@@ -108,31 +109,12 @@ const winResult = function(){
     $(`audio.${player2.name}-win`)[0].play();
   }
   $('aside').css('visibility', 'visible');
-  // $('aside p').css('visibility', 'visible');
   $('aside.first-player h3').text(`${player1.name} wins`)
   $('aside p.first').text(`${player1.scoreboard}`).css('visibility', 'visible')
   $('aside.second-player h3').text(`${player2.name} wins`).css('visibility', 'visible')
   $('aside p.second').text(`${player2.scoreboard}`)
 };
 
-
-//
-// if (boxes.count === 9){
-//   $('audio.draw')[0].delay(800).play();
-//   // alert("it's a draw");
-//   reset();
-// }
-
-
-
-//note for tomorrow - you may want to always reset and alert outside of the above function and inside of the dom function
-
-
-
-// if (boxes.count === 9){
-//   reset();
-//   $('audio.draw')[0].play();              //here's where to add the draw graphic
-// } else {
 
 
 

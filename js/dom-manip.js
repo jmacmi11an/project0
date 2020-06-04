@@ -2,9 +2,7 @@ let player1 = ""
 let player2 = ""
 
 
-
 $(document).ready(function(){
-
 
 
 $('button#rick').on('click', function(){
