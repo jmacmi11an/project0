@@ -11,11 +11,12 @@ body {
   text-align:  center;
   font-family: "GetSchwifty";
   color: white;
+  margin: auto;
 
 }
 
 .container {
-  width: 960px;
+  max-width: 900px;
   display: inline;
 }
 
@@ -64,6 +65,8 @@ p {
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: #15b0c9;
   height: 55px;
+  margin: auto;
+  max-width: 90%;
 }
 
 button {
@@ -172,7 +175,7 @@ aside {
 }
 
 aside.first-player {
-  left: 15%;
+  left: 5%;
 }
 
 aside.second-player {
@@ -184,4 +187,84 @@ div aside p {
   visibility: visible;
   color: white;
   font-size: 26px;
+}
+
+
+@media (max-width: 600px){
+
+  body {
+    background-color: #14171f;
+  }
+  header {
+    width: 500px;
+    display: inline-block;
+  }
+
+  .container {
+    display: inline-block;
+    width: 500px;
+  }
+  h1 {
+    font-size: 60px;
+  }
+
+  p {
+    width: 80%;
+    display: inline-block;
+    color: white;
+    margin-top: -2em;
+    line-height: 26px;
+  }
+
+  p#characters {
+    margin: 24px 0 12px 0;
+  }
+
+  header div {
+    height: 67px;
+  }
+
+  div.players {
+    height: 30px;
+  }
+
+  button#start {
+    margin: 1em;
+    margin-bottom: 5px;
+  }
+
+  div.players p {
+    height: 30px;
+    margin-top: -4em;
+    margin-bottom: 1em;
+  }
+
+  div.characters {
+    display: grid;
+    width: 50%;
+    margin: auto;
+  }
+
+  div.gameboard {
+    height: 450px;
+    width: 450px;
+  }
+
+  aside.first-player {
+    left: 10px;
+  }
+
+  aside.second-player {
+    right: 50px;
+  }
+
+  h1.results {
+    background-color: rgba(0, 0, 0, .8);
+    padding: 50px 0 50px 0;
+    display: block;
+    height: 100px
+    width: 500px;
+    left: 0px;
+  }
+
 }

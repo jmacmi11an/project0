@@ -60,8 +60,11 @@ const reset = function(){
   $('p#first').removeClass('first-player').removeClass('second-player').addClass('first-player').hide();
   $('p#second').removeClass('first-player').removeClass('second-player').addClass('second-player').hide();
   isReset = true;
-  // $('aside').css('visibility', 'visible')
+  //I also need to reset the global player1 and player2 variables
+  //I also need to make all the player buttons visible
 };
+
+
 
 // this is a function that determines if a player has won
 const determineWin = function(array, box){
@@ -71,8 +74,8 @@ const determineWin = function(array, box){
         if (winArray[j] === box){                     // check if most recent box was in win path
           winArray.splice(j, 1);                    // if so, delete ticked box from win path
           if (winArray.length === 0){               // if the winpath is empty that triggers a win.
+            winResult();                      //may need to switch this and the following line
             reset();
-            winResult();
           }
         }
       }
@@ -109,9 +112,9 @@ const winResult = function(){
     $(`audio.${player2.name}-win`)[0].play();
   }
   $('aside').css('visibility', 'visible');
-  $('aside.first-player h3').text(`${player1.name} wins`)
+  $('aside.first-player h3').text(`${player1.name}`)
   $('aside p.first').text(`${player1.scoreboard}`).css('visibility', 'visible')
-  $('aside.second-player h3').text(`${player2.name} wins`).css('visibility', 'visible')
+  $('aside.second-player h3').text(`${player2.name}`).css('visibility', 'visible')
   $('aside p.second').text(`${player2.scoreboard}`)
 };
 
