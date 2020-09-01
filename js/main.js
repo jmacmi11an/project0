@@ -1,3 +1,4 @@
+//this resets the playerArrays for a new game
 const resetArrays = function(){
   return [
     ["a", "b", "c"],
@@ -9,7 +10,8 @@ const resetArrays = function(){
     ["a", "e", "i"],
     ["c", "e", "g"],
   ];
-}  //this resets the playerArrays for a new game
+}
+
 let boxes = {
   a: 0,
   b: 0,
@@ -75,6 +77,9 @@ const determineWin = function(array, box){
           winArray.splice(j, 1);                    // if so, delete ticked box from win path
           if (winArray.length === 0){               // if the winpath is empty that triggers a win.
             winResult();                      //may need to switch this and the following line
+            //////// NEW LINE TEST ////////////////
+            player1Win = resetArrays();
+            player2Win = resetArrays();
             reset();
           }
         }
@@ -111,6 +116,7 @@ const winResult = function(){
     player2.scoreboard += 1;
     $(`audio.${player2.name}-win`)[0].play();
   }
+  // for (key in value)
   $('aside').css('visibility', 'visible');
   $('aside.first-player h3').text(`${player1.name}`)
   $('aside p.first').text(`${player1.scoreboard}`).css('visibility', 'visible')

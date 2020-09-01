@@ -16,7 +16,11 @@ https://jmacmi11an.github.io/project0/
 ## Build Experience
 When building this website I started with JS and hardcoded it for two players "rick" and "morty."
 After refactoring it to be general I started building player objects for multiple characters with unique move and win sounds, images, and text.
-Then I build an active scoreboard.
+Then I built an active scoreboard.
+
+The player-object JS page just contains each possible character. The template is easy to update with more characters if desired.
+
+
 
 
 Still to be done are:
